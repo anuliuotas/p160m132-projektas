@@ -72,7 +72,7 @@ def main(path_usage, path_output):
         columns = f.read().rstrip().split(",")
     combined_df = join_csv_files(tmp_dir_path, columns)
 
-    combined_df.to_csv(os.path.join(tmp_dir_path, "..", "combined_csv.csv"), index=False,
+    combined_df.to_csv(os.path.join(tmp_dir_path, "..", "aggregated_customer_usage.csv"), index=False,
                         encoding='utf-8-sig')
     try:
         shutil.rmtree(tmp_dir_path)
