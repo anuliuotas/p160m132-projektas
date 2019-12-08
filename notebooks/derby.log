@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Dec 08 14:24:56 EET 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-016e-e578-4d04-00000ceb0b08 
+on database directory /home/majo/Dropbox/Studijos/Magistras/Didziuju duomenu rinkiniu tyrybos metodai/Projektas/p160m132-projektas/notebooks/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@4db722f7 
+Loaded from file:/home/majo/anaconda3/lib/python3.7/site-packages/pyspark/jars/derby-10.12.1.1.jar
+java.vendor=Private Build
+java.runtime.version=1.8.0_222-8u222-b10-1ubuntu1~19.04.1-b10
+user.dir=/home/majo/Dropbox/Studijos/Magistras/Didziuju duomenu rinkiniu tyrybos metodai/Projektas/p160m132-projektas/notebooks
+os.name=Linux
+os.arch=amd64
+os.version=5.0.0-37-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
