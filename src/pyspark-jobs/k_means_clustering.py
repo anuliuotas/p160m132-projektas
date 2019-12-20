@@ -44,26 +44,14 @@ def main(params_json):
     clustering_df = spark.read.parquet(path_aggregated_df)
     columns_clustering_features = columns_clustering_features = [
         'user_lifetime',
-        'user_no_outgoing_activity_in_days',
-        'user_account_balance_last',
-        'user_spendings',
+        'calls_outgoing_count',
+        'calls_outgoing_inactive_days',
+        'calls_outgoing_spendings',
         'reloads_inactive_days',
         'reloads_count',
-        'calls_outgoing_count',
-        'calls_outgoing_spendings_max',
-        'calls_outgoing_inactive_days',
-        'calls_outgoing_to_onnet_count',
-        'calls_outgoing_to_onnet_spendings',
-        'calls_outgoing_to_abroad_count',
-        'calls_outgoing_to_abroad_duration',
-        'sms_outgoing_count',
-        'sms_outgoing_spendings_max',
-        'sms_outgoing_inactive_days',
-        'sms_outgoing_to_onnet_count',
-        'sms_outgoing_to_abroad_count',
-        'gprs_session_count',
-        'gprs_spendings',
-        'gprs_inactive_days',
+        'user_account_balance_last',
+        'user_no_outgoing_activity_in_days',
+        'churn'
     ]
     vector_assembler = VectorAssembler(
         inputCols=columns_clustering_features,
@@ -82,7 +70,7 @@ def main(params_json):
     featurized_clustering_df = featurization_pipeline_model.transform(clustering_df)
 
     for k in settings_json['k_values']:
-        kmeans = KMeans(featuresCol="features", k=k)
+        kmeans = KMeans(featuresCol="features", k=k, maxIter=2000)
         model_kmeans = kmeans.fit(featurized_clustering_df)
         path_metrics_kmeans_sse = settings_json['path_metrics_kmeans_sse']
         sse = model_kmeans.computeCost(featurized_clustering_df)
