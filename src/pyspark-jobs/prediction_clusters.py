@@ -105,7 +105,7 @@ def main(path_data, path_parameters, dir_models):
         path_validation_metrics = pathlib.Path(dir_model).joinpath("metrics_validation.json")
         path_model_description = pathlib.Path(dir_model).joinpath("model_description.json")
 
-        pipeline_model.save(str(path_pipeline_model))
+        #pipeline_model.save(str(path_pipeline_model))
         with open(path_train_metrics, "w") as f:
             json.dump(train_metrics, f)
         with open(path_validation_metrics, "w") as f:

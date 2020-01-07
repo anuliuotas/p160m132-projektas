@@ -1,6 +1,6 @@
 { 
    "rf_params":{ 
-      "numTrees":50,
+      "numTrees":60,
       "maxDepth":10
    },
    "feature_columns":[ 
